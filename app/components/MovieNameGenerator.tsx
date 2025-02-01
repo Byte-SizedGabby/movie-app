@@ -11,44 +11,6 @@ interface MovieNameResponse {
   error?: string;
 }
 
-const ScrollDownArrow = () => (
-  <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-    {[0, 300, 600].map((delay) => (
-      <span
-        key={delay}
-        className={`block w-4 h-4 border-b-2 border-r-2 border-white transform rotate-45 mb-1 animate-scroll-down delay-${delay}`}
-      ></span>
-    ))}
-    <style jsx>{`
-      @keyframes scroll-down {
-        0% {
-          opacity: 0;
-          transform: rotate(45deg) translate(-10px, -10px);
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          transform: rotate(45deg) translate(10px, 10px);
-        }
-      }
-      .animate-scroll-down {
-        animation: scroll-down 1.5s infinite;
-      }
-      .delay-0 {
-        animation-delay: 0s;
-      }
-      .delay-300 {
-        animation-delay: 0.3s;
-      }
-      .delay-600 {
-        animation-delay: 0.6s;
-      }
-    `}</style>
-  </div>
-);
-
 export const MovieNameGenerator = () => {
   const [movieName, setMovieName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -161,11 +123,6 @@ export const MovieNameGenerator = () => {
           </div>
         </div>
       </div>
-      {isScrollable && (
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-          <ScrollDownArrow />
-        </div>
-      )}
     </div>
   );
 };
