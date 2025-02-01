@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { MovieNameButton } from "./MovieNameButton";
 import { MovieNameDisplay } from "./MovieNameDisplay";
 
@@ -14,25 +14,7 @@ interface MovieNameResponse {
 export const MovieNameGenerator = () => {
   const [movieName, setMovieName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [isScrollable, setIsScrollable] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-
-  const checkScrollable = () => {
-    if (contentRef.current) {
-      setIsScrollable(
-        contentRef.current.scrollHeight > contentRef.current.clientHeight
-      );
-    }
-  };
-
-  useEffect(() => {
-    checkScrollable();
-    window.addEventListener("resize", checkScrollable);
-
-    return () => {
-      window.removeEventListener("resize", checkScrollable);
-    };
-  }, []);
 
   const shuffleArray = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -101,7 +83,6 @@ export const MovieNameGenerator = () => {
         setLoading(false);
       }
     }
-    checkScrollable();
   };
 
   return (
@@ -117,7 +98,6 @@ export const MovieNameGenerator = () => {
           <div
             className="overflow-x-auto max-h-64 w-full relative"
             ref={contentRef}
-            onScroll={checkScrollable}
           >
             <MovieNameDisplay movieName={movieName} />
           </div>
