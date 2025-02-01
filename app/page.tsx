@@ -25,8 +25,11 @@ export default function Home() {
         </span>
       </div>
       <MovieNameGenerator />
-      <footer className="text-white text-center py-2 mt-1 w-full absolute bottom-0">
-        &copy; {new Date().getFullYear()} Byte-SizedGabby. All rights reserved.
+      <footer className="text-center py-2 mt-1 w-full absolute bottom-0">
+        <span className="text-white light:text-black">
+          &copy; {new Date().getFullYear()} Byte-SizedGabby. All rights
+          reserved.
+        </span>
       </footer>
     </div>
   );
