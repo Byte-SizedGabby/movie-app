@@ -87,7 +87,7 @@ export const MovieNameGenerator = () => {
 
   return (
     <div className="flex items-center justify-center relative">
-      <div className="p-8 rounded-lg shadow-lg text-white light:text-black w-full max-w-5xl">
+      <div className="p-8 text-white  w-full max-w-5xl">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Film Title Wizard
         </h1>
@@ -96,7 +96,7 @@ export const MovieNameGenerator = () => {
             <MovieNameButton onClick={generateMovieName} loading={loading} />
           </div>
           <div
-            className="overflow-x-auto max-h-64 w-full relative"
+            className="overflow-x-auto max-h-80 w-full relative"
             ref={contentRef}
           >
             <MovieNameDisplay movieName={movieName} />
