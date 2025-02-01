@@ -13,9 +13,12 @@ interface MovieNameResponse {
 
 const ScrollDownArrow = () => (
   <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-    <span className="block w-4 h-4 border-b-2 border-r-2 border-white transform rotate-45 mb-1 animate-scroll-down"></span>
-    <span className="block w-4 h-4 border-b-2 border-r-2 border-white transform rotate-45 mb-1 animate-scroll-down delay-300"></span>
-    <span className="block w-4 h-4 border-b-2 border-r-2 border-white transform rotate-45 animate-scroll-down delay-600"></span>
+    {[0, 300, 600].map((delay) => (
+      <span
+        key={delay}
+        className={`block w-4 h-4 border-b-2 border-r-2 border-white transform rotate-45 mb-1 animate-scroll-down delay-${delay}`}
+      ></span>
+    ))}
     <style jsx>{`
       @keyframes scroll-down {
         0% {
@@ -32,6 +35,9 @@ const ScrollDownArrow = () => (
       }
       .animate-scroll-down {
         animation: scroll-down 1.5s infinite;
+      }
+      .delay-0 {
+        animation-delay: 0s;
       }
       .delay-300 {
         animation-delay: 0.3s;
@@ -143,11 +149,11 @@ export const MovieNameGenerator = () => {
           Film Title Wizard
         </h1>
         <div className="flex flex-col items-center">
-          <div className="to-2 bottom-50 mb-4">
+          <div className="mb-4">
             <MovieNameButton onClick={generateMovieName} loading={loading} />
           </div>
           <div
-            className="to-2 overflow-x-auto max-h-64 w-full relative"
+            className="overflow-x-auto max-h-64 w-full relative"
             ref={contentRef}
             onScroll={checkScrollable}
           >
