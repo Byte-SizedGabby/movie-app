@@ -6,11 +6,11 @@ Key Features:
 
 🔀 Randomized & Intelligent Suggestions – Ensures diverse and meaningful movie title outputs.
 
-⚡ Fast & Scalable with Next.js – Optimized performance and seamless user experience using the Next.js framework.
+⚡ Fast & Scalable with Next.js – Optimised performance and seamless user experience using the Next.js framework.
 
 💾 Save & Share Favorites – Keep track of generated titles and share them with others.
 
-Turn AI creativity into cinematic magic with MovieGen AI! 🚀🍿
+Turn AI creativity into cinematic magic with ! 🚀🍿
 
 ## Getting Started
 
