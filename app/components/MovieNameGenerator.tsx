@@ -71,7 +71,7 @@ export const MovieNameGenerator = () => {
             `API error: ${response.status} ${response.statusText}`
           );
         }
-      } catch (error: unknown) {
+      } catch {
         attempt += 1;
 
         if (attempt < maxRetries) {

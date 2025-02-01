@@ -35,10 +35,6 @@ export async function POST(req: Request) {
     const generatedText =
       data?.choices?.[0]?.message?.content ?? "No response from model";
 
-    if (!generatedText) {
-      throw new Error("No valid response from the model");
-    }
-
     return new Response(JSON.stringify({ movieName: generatedText }), {
       status: 200,
     });
