@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+Key Features:
+
+🎬 AI-Powered Movie Title Generation – Leverages Mistral NeMo to create fresh, dynamic, and unique movie names.
+
+🔀 Randomized & Intelligent Suggestions – Ensures diverse and meaningful movie title outputs.
+
+⚡ Fast & Scalable with Next.js – Optimized performance and seamless user experience using the Next.js framework.
+
+💾 Save & Share Favorites – Keep track of generated titles and share them with others.
+
+Turn AI creativity into cinematic magic with MovieGen AI! 🚀🍿
+
 ## Getting Started
 
 First, run the development server:
